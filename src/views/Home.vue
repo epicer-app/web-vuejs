@@ -1,18 +1,21 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <PopularRecipes v-bind:recipes="popularRecipes"></PopularRecipes>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import PopularRecipes from '@/components/PopularRecipes.vue';
 
 export default {
   name: 'home',
   components: {
-    HelloWorld
-  }
-}
+    PopularRecipes,
+  },
+  computed: {
+    popularRecipes() {
+      return this.$store.state.recipeList.popularRecipes;
+    },
+  },
+};
 </script>

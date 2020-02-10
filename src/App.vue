@@ -1,3 +1,21 @@
+<script>
+import store from '@/store';
+
+export default {
+  props: {
+    name: String,
+  },
+  computed: {
+    recipeList() {
+      return store.state.recipeList.popularRecipes;
+    },
+  },
+  mounted() {
+    store.dispatch('fetchPopularRecipes', {count: 5});
+  },
+};
+</script>
+
 <template>
   <div id="app">
     <div id="nav">
