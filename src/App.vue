@@ -11,7 +11,7 @@ export default {
     },
   },
   mounted() {
-    store.dispatch('fetchPopularRecipes', {count: 5});
+    // store.dispatch('fetchPopularRecipes', {count: 5});
   },
 };
 </script>

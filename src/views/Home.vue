@@ -5,17 +5,22 @@
 </template>
 
 <script>
+import Vue from 'vue';
+import store from '@/store';
 import PopularRecipes from '@/components/PopularRecipes.vue';
 
-export default {
+export default Vue.extend({
   name: 'home',
   components: {
     PopularRecipes,
   },
   computed: {
     popularRecipes() {
-      return this.$store.state.recipeList.popularRecipes;
+      return this.$store.state.popularRecipes.recipes;
     },
   },
-};
+  mounted() {
+    store.dispatch('fetchPopularRecipes');
+  },
+});
 </script>

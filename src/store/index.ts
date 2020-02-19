@@ -1,7 +1,8 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
-import { recipeList } from './recipeList';
+import { recipe } from './recipe';
+import { popularRecipes } from './popular';
 
 Vue.use(Vuex);
 
@@ -13,6 +14,8 @@ export default new Vuex.Store({
   actions: {
   },
   modules: {
-    recipeList,
+    // recipeList,
+    recipe,
+    popularRecipes,
   },
 });

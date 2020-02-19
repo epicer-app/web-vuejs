@@ -7,7 +7,6 @@
 </template>
 <script lang="ts">
 import { Component, Prop, Vue} from 'vue-property-decorator';
-import { IRecipe } from '../store/recipeList';
 
 @Component
 export default class RecipeCard extends Vue {
@@ -18,6 +17,6 @@ export default class RecipeCard extends Vue {
         }
         return name;
     }
-    @Prop() private recipe!: IRecipe;
+    @Prop() private recipe!: any;
 }
 </script>

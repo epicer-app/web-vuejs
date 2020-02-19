@@ -1,9 +1,13 @@
-import falcor, { PathSet, JSONGraph, JSONGraphEnvelope, Model} from 'falcor';
-
+import falcor, { PathSet, JSONGraph, JSONGraphEnvelope, Model } from 'falcor';
+import HttpDataSource from 'falcor-http-datasource';
 import { mockDataSource } from './mock';
 
+// TODO: Load from config
+const baseUrl = 'http://localhost:3000';
+const epicerApiDataSource = new HttpDataSource(`${baseUrl}/model.json`);
+
 export const model = new Model({
-    source: mockDataSource,
+    source: epicerApiDataSource, // mockDataSource,
 });
 
 interface StringIndexable {

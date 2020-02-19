@@ -5,7 +5,6 @@
 </template>
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import { IRecipe } from '../store/recipeList';
 import RecipeCard from './RecipeCard.vue';
 
 @Component({
@@ -14,6 +13,12 @@ import RecipeCard from './RecipeCard.vue';
     },
 })
 export default class PopularRecipes extends Vue {
-    @Prop() private recipes!: IRecipe[];
+    get recipes() {
+        return this.$store.state.popularRecipes.recipes;
+    }
+
+    protected mounted() {
+        this.$store.dispatch('fetchPopularRecipes');
+    }
 }
 </script>

@@ -18,7 +18,7 @@ export const recipesById = {
         }, {
             name: 'vanilla',
             amount: 1,
-            measure: 'tbsp',
+            measure: 'tsp',
         }, {
             name: 'orange zest',
             amount: .5,
@@ -76,7 +76,7 @@ export const recipesById = {
             measure: 'tsp',
         }, {
             name: 'water',
-            amount: .33,
+            amount: 4.33,
             measure: 'cup',
         }],
         steps: [{
@@ -86,6 +86,9 @@ export const recipesById = {
         }, {
             description: 'Transfer to a bowel to cool.',
         }],
+    },
+    asdf9876: {
+        name: 'Desert Dry Brine',
     },
 };
 
