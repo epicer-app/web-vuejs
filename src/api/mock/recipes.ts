@@ -91,10 +91,3 @@ export const recipesById = {
         name: 'Desert Dry Brine',
     },
 };
-
-export const combinedRecipes = [
-    {
-        base: ref(['recipesById', 'asdf1234']),
-        with: ref(['recipesById', 'asdf5678']),
-    },
-];

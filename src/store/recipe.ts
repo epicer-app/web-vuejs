@@ -1,6 +1,19 @@
 import { api } from '@/api';
 import { deepMerge } from '@/utilities';
 
+export type IRecipeStep = string;
+export type IRecipeIngredient = string;
+export interface IRecipe {
+    id: string;
+    name: string;
+    ingredients: IRecipeIngredient[];
+    steps: IRecipeStep[];
+}
+
+export interface IRecipeOverview {
+    name: string;
+}
+
 const convertObject = (obj: any) => Object.entries(obj).map(([id, entry]: [string, any]) => ({id, ...entry}));
 
 
@@ -42,8 +55,8 @@ export const recipe = {
         mainRecipe: {},
         withRecipe: {},
         recipeOverview: {},
-
     },
+
     mutations: {
         mainRecipe(state: any, theRecipe: any) {
             state.mainRecipe = theRecipe;
@@ -55,6 +68,7 @@ export const recipe = {
             state.recipeOverview = recipeOverview;
         },
     },
+
     actions: {
         async fetchRecipe(context: any, args: any) {
             const id = args.recipeId;

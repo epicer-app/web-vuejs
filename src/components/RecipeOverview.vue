@@ -1,9 +1,10 @@
 <template>
-    <section class="recipe-overview">
-        <h1>{{mainRecipeName}}</h1>
-        <h2 v-if="withRecipeName">with {{withRecipeName}}</h2>
-    </section>
+<section class="recipe-overview">
+    <h1>{{mainRecipeName}}</h1>
+    <h2 v-if="withRecipeName">with {{withRecipeName}}</h2>
+</section>
 </template>
+
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
 
